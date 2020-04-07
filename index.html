@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
-<title>与佛论禅重制版——Takuron</title>
+<title>与佛论禅重制版—Takuron</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,9 +25,11 @@
 <body>
 <div class="container">
   <div class="starter-template">
-    <h2>与佛论禅重置版</h2>
-    <p class="lead"></p>
+    <h1>与佛论禅重置版</h1>
+    <p class="lead">我仅代表全知全能的谭真特佛，为世人传播福音提供方便。</p>
+    <p class="lead">（如果您第一次使用请阅读“普渡众生”）</p>
   </div>
+  <!--error-->
   <div class="row">
     <div class="col-lg-2"></div>
     <div class="col-12 col-lg-8" id="alert">
@@ -35,6 +37,15 @@
     </div>
     <div class="col-lg-2"></div>
   </div>
+  <!--success-->
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-8" id="alert">
+      <div class="alert alert-success alert-dismissable hide" id="copy-alert" role="alert"> 复制成功 </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <!--main-->
   <div class="row">
     <div class="col-lg-2"></div>
     <div class="col-12 col-lg-8">
@@ -46,7 +57,7 @@
   </div>
   <div class="row">
     <div class="col-lg-2"></div>
-    <div class="col-12 col-lg-3 button-cen">
+    <div class="col-12 col-lg-3 leftb">
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="button" class="btn btn-primary" onClick="encrypt()">听佛讲经</button>
         <button type="button" class="btn btn-warning" onClick="decrypt()">听佛解惑</button>
@@ -54,7 +65,7 @@
     </div>
     <div class="col-12 col-lg-5 button-cen">
       <div class="form-group">
-        <input type="password" class="form-control" id="text-key" placeholder="箴言">
+        <input type="password" class="form-control" id="text-key" placeholder="箴言（可选）">
       </div>
     </div>
   </div>
@@ -67,11 +78,46 @@
     </div>
     <div class="col-lg-2"></div>
   </div>
+  <div class="row lowroe">
+    <div class="col-lg-2"></div>
+    <div class="col-4 col-lg-2 leftb">
+      <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#aboutModal">普渡众生</button>
+    </div>
+    <div class="col-8 col-lg-4"> </div>
+    <div class="col-4 col-lg-2 rightb">
+      <button type="button"  class="btn btn-primary" onClick="copyUrl2()">复制</button>
+    </div>
+  </div>
 </div>
-<!-- /.container -->
+<!-- /.container --> 
 
+<!-- Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">普渡众生（帮助）</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>Q：这是什么？</p>
+        <p>A：这是一个用于混淆/加密文本的小工具，灵感来自<a href="http://www.keyfc.net/bbs/tools/tudoucode.aspx">原版与佛论禅</a>，并且在其基础上进行了改进使其获得加密功能。</p>
+        <p>Q：如何使用？</p>
+        <p>A：听佛讲经（加密）：将原文输入在上方输入框，输入箴言（密码，可选）即可得到佛语（密文）；听佛解惑（解密）：将佛经（密文）输入在上方，输入箴言（可选）即可得到原文。</p>
+        <p>Q：为何无法得到原文</p>
+        <p>A：原文已损坏，部分软件（百度贴吧）会自动转义繁体字导致无法解读。另外，也请您自行确定原文完整程度，解密时需保留“佛曰”。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">然也</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
 <footer class="footer mt-auto py-3">
-  <div class="container"> <span class="text-muted">This website has nothing to do with religion.<br> Developed by Takuron and open source on GitHub.</span> </div>
+  <div class="container"> <span class="text-muted">This website has nothing to do with religion.<br>
+    Developed by <a href="https://github.com/takuron">Takuron</a> and open source on <a href="https://github.com/takuron/talk-with-buddha">GitHub</a>.</span> </div>
 </footer>
 <script src="js/jquery.slim.min.js" ></script> 
 <script src="js/popper.min.js" ></script> 

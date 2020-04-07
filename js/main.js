@@ -1,9 +1,12 @@
 // JavaScript Document
 
 $("#error-alert").hide();
+$("#copy-alert").hide();
+
+var password = "TakuronDotTop";
 
 String.prototype.replaceAll = function (s1, s2) {
-	var reg = new RegExp(s1, "g");    
+	var reg = new RegExp(s1, "g");
 	return this.replace(reg, s2);
 }
 
@@ -13,14 +16,16 @@ function encrypt() {
 
 	if (msg.length < 1) {
 		$("#error-alert").show();
+		$("#copy-alert").hide();
 		$("#error-alert").text("无言者，纵真神再临，亦不可渡。（请输入待加密的明文）");
 	} else {
 		if (key.length < 1) {
-			key = "TakuronDotTop"
+			key = password;
 		}
 
 		$("#text-encryped").val(togod(msg, key));
 		$("#error-alert").hide();
+		$("#copy-alert").hide();
 	}
 
 }
@@ -31,33 +36,46 @@ function decrypt() {
 
 	if (msg.length < 1) {
 		$("#error-alert").show();
+		$("#copy-alert").hide();
 		$("#error-alert").text("无言者，纵真神再临，亦不可渡。（请输入待解密的密文）");
 	} else {
 		if (msg.substring(0, 3) != "佛曰：") {
 			$("#error-alert").show();
+			$("#copy-alert").hide();
 			$("#error-alert").text("施主可曾记得此为何高僧所言？（不是佛语，请确定密文来源本网站并且密文以“佛曰：开头”）");
 		} else {
 			if (key.length < 1) {
-				key = "TakuronDotTop"
-			}
-			
-			var str = toman(msg, key);
-			
-			if(str.length < 1){
-				$("#error-alert").show();
-				$("#error-alert").text("施主可曾记得此为何高僧所言？（佛语有误，请确定密钥正确并未被篡改）");
-			}
-			else{
-				$("#text-encryped").val(str);
-				$("#error-alert").hide();
+				key = password;
 			}
 
-			
+			try {
+				$("#error-alert").hide();
+				var str = toman(msg, key);
+			} catch (err) {
+				$("#error-alert").show();
+				$("#copy-alert").hide();
+				$("#error-alert").text("施主可曾记得此为何高僧所言？（佛语有误，请确定密钥正确并未被篡改）");
+			} finally {
+				$("#text-encryped").val(str);
+
+			}
+
+
+
 		}
 
 
 	}
 
+}
+
+
+function copyUrl2() {
+	var Url2 = document.getElementById("text-encryped");
+	Url2.select();
+	document.execCommand("Copy");
+	$("#copy-alert").show();
+	$("#error-alert").hide();
 }
 
 function togod(msg, key) {

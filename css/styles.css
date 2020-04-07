@@ -16,3 +16,15 @@ body {
 .footer {
   background-color: #f5f5f5;
 }
+
+.lowroe{
+	padding-bottom: 10px;
+}
+
+.leftb{
+	text-align: left;
+}
+
+.rightb{
+	text-align: right;
+}
