@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<title>与佛论禅重制版——Takuron</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Custom styles for this template -->
+<link href="css/styles.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+  <div class="starter-template">
+    <h2>与佛论禅重置版</h2>
+    <p class="lead"></p>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-8" id="alert">
+      <div class="alert alert-danger alert-dismissable hide" id="error-alert" role="alert"> 不可说,不可说,一说即是错 </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-8">
+      <div class="form-group">
+        <textarea class="form-control" id="text-decryped" placeholder="你的困惑" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-3 button-cen">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" onClick="encrypt()">听佛讲经</button>
+        <button type="button" class="btn btn-warning" onClick="decrypt()">听佛解惑</button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 button-cen">
+      <div class="form-group">
+        <input type="password" class="form-control" id="text-key" placeholder="箴言">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-8">
+      <div class="form-group">
+        <textarea class="form-control" id="text-encryped" placeholder="佛的答案" rows="7"></textarea>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<!-- /.container -->
+
+<footer class="footer mt-auto py-3">
+  <div class="container"> <span class="text-muted">This website has nothing to do with religion.<br> Developed by Takuron and open source on GitHub.</span> </div>
+</footer>
+<script src="js/jquery.slim.min.js" ></script> 
+<script src="js/popper.min.js" ></script> 
+<script src="js/bootstrap.min.js" ></script> 
+<script src="js/crypto-js.min.js"></script> 
+<script src="js/main.js"></script>
+</body>
+</html>

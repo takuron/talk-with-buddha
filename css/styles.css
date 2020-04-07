@@ -1,0 +1,18 @@
+
+body {
+  padding-top: 50px;
+}
+
+.button-cen {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.container{
+  text-align: center;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
