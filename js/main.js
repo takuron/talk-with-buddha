@@ -3,7 +3,7 @@
 $("#error-alert").hide();
 $("#copy-alert").hide();
 
-var password = "TakuronDotTop";
+var password = "takuron.top";
 
 String.prototype.replaceAll = function (s1, s2) {
 	var reg = new RegExp(s1, "g");
@@ -39,10 +39,10 @@ function decrypt() {
 		$("#copy-alert").hide();
 		$("#error-alert").text("无言者，纵真神再临，亦不可渡。（请输入待解密的密文）");
 	} else {
-		if (msg.substring(0, 3) != "佛曰：") {
+		if (msg.substring(0, 4) != "佛又曰：") {
 			$("#error-alert").show();
 			$("#copy-alert").hide();
-			$("#error-alert").text("施主可曾记得此为何高僧所言？（不是佛语，请确定密文来源本网站并且密文以“佛曰：开头”）");
+			$("#error-alert").text("施主可曾记得此为何高僧所言？（不是佛语，请确定密文来源本网站并且密文以“佛又曰：开头”）");
 		} else {
 			if (key.length < 1) {
 				key = password;
@@ -149,12 +149,12 @@ function togod(msg, key) {
 	str = str.replaceAll("/", "输");
 	str = str.replaceAll("=", "漫");
 
-	return "佛曰：" + str;
+	return "佛又曰：" + str;
 }
 
 function toman(msg, key) {
 
-	str = msg.substring(3);
+	str = msg.substring(4);
 
 	str = str.replaceAll("啰", "e");
 	str = str.replaceAll("羯", "E");
